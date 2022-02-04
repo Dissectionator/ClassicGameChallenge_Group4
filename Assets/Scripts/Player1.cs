@@ -36,9 +36,12 @@ public class Player1 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.C) && GameObject.FindGameObjectsWithTag("Spatula").Length < 1)
         {
-
+            speed = 0.0f;    
             Launch();
-
+        }
+        if (Input.GetKeyUp(KeyCode.C))
+        {
+            speed = 3.0f;
         }
 
         if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
